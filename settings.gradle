@@ -1,1 +1,1 @@
-include ':app', ':jobboard'
+include ':app', ':jobboard', ':askhn', ':showhn', ':beststories'

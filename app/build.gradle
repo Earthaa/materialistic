@@ -51,7 +51,7 @@ android {
     aaptOptions {
         cruncherEnabled = false
     }
-    dynamicFeatures = [":jobboard"]
+    dynamicFeatures = [":jobboard", ":askhn", ":showhn", ":beststories"]
 
 
 }

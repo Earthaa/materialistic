@@ -321,5 +321,8 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="notification_channel_downloads">Downloads</string>
     <string name="title_jobboard">jobboard</string>
+    <string name="title_askhn">askhn</string>
+    <string name="title_showhn">showhn</string>
+    <string name="title_beststories">beststories</string>
 
 </resources>
