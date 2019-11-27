@@ -33,7 +33,7 @@ public class LauncherActivity extends Activity {
         map.put(getString(R.string.pref_launch_screen_value_new), NewActivity.class);
         map.put(getString(R.string.pref_launch_screen_value_ask), AskActivity.class);
         map.put(getString(R.string.pref_launch_screen_value_show), ShowActivity.class);
-        map.put(getString(R.string.pref_launch_screen_value_jobs), JobsActivity.class);
+        //map.put(getString(R.string.pref_launch_screen_value_jobs), JobsActivity.class);
         map.put(getString(R.string.pref_launch_screen_value_saved), FavoriteActivity.class);
         String launchScreen = Preferences.getLaunchScreen(this);
         startActivity(new Intent(this, map.containsKey(launchScreen) ?

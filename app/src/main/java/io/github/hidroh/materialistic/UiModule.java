@@ -44,6 +44,7 @@ import io.github.hidroh.materialistic.widget.ThreadPreviewRecyclerViewAdapter;
                 JobsActivity.class,
                 ListActivity.class,
                 LoginActivity.class,
+                BaseStoriesActivity.class,
                 NewActivity.class,
                 OfflineWebActivity.class,
                 PopularActivity.class,

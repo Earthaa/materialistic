@@ -58,6 +58,8 @@ public abstract class InjectableActivity extends ThemedActivity implements Injec
             mActivityGraph = ((Injectable) getApplication()).getApplicationGraph()
                     .plus(new ActivityModule(this), new UiModule());
         }
+        //mActivityGraph.
+
         return mActivityGraph;
     }
 

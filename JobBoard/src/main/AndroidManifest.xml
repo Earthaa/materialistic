@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="io.github.hidroh.materialistic.module">
+
+    <dist:module
+        dist:onDemand="true"
+        dist:title="@string/title_jobboard">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+    <application>
+        <activity
+            android:name="io.github.hidroh.materialistic.module.JobsActivity"
+            android:label="@string/title_activity_jobs" >
+        </activity>
+    </application>
+</manifest>
+

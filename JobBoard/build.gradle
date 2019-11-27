@@ -1,0 +1,32 @@
+apply plugin: 'com.android.dynamic-feature'
+
+android {
+    compileSdkVersion 29
+    
+
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+    implementation 'androidx.appcompat:appcompat:1.0.0',
+            'androidx.recyclerview:recyclerview:1.0.0',
+            'androidx.cardview:cardview:1.0.0',
+            'com.google.android.material:material:1.0.0',
+            'androidx.preference:preference:1.0.0',
+            'androidx.browser:browser:1.0.0',
+            'androidx.room:room-runtime:2.0.0',
+            "com.squareup.dagger:dagger:1.2.5",
+            'androidx.lifecycle:lifecycle-extensions:2.0.0',
+            'androidx.lifecycle:lifecycle-common-java8:2.0.0',
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
