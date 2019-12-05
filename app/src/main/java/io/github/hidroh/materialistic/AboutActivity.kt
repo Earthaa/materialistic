@@ -27,7 +27,6 @@ class AboutActivity : InjectableActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_about)
     setSupportActionBar(findViewById(R.id.toolbar))
-
     supportActionBar!!.displayOptions = ActionBar.DISPLAY_SHOW_HOME or
         ActionBar.DISPLAY_HOME_AS_UP or ActionBar.DISPLAY_SHOW_TITLE
 

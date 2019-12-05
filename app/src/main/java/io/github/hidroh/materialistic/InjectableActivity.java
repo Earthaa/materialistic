@@ -27,7 +27,6 @@ public abstract class InjectableActivity extends ThemedActivity implements Injec
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        inject(this);
     }
 
     @Override

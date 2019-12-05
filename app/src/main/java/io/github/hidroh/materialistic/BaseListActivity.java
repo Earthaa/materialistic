@@ -68,11 +68,12 @@ public abstract class BaseListActivity extends DrawerActivity implements MultiPa
     private Preferences.StoryViewMode mStoryViewMode;
     private boolean mExternalBrowser;
     private ViewPager mViewPager;
-    @Inject ActionViewResolver mActionViewResolver;
-    @Inject PopupMenu mPopupMenu;
-    @Inject SessionManager mSessionManager;
-    @Inject CustomTabsDelegate mCustomTabsDelegate;
-    @Inject KeyDelegate mKeyDelegate;
+     ActionViewResolver mActionViewResolver = new ActionViewResolver();
+     PopupMenu mPopupMenu = new PopupMenu.Impl();
+     @Inject SessionManager mSessionManager;
+
+     CustomTabsDelegate mCustomTabsDelegate = new CustomTabsDelegate();
+     KeyDelegate mKeyDelegate = new KeyDelegate();
     private AppBarLayout mAppBar;
     private TabLayout mTabLayout;
     private FloatingActionButton mReplyButton;

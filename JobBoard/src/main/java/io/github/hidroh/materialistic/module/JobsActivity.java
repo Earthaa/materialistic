@@ -15,10 +15,9 @@
  */
 
 package io.github.hidroh.materialistic.module;
-import dagger.*;
+
 import androidx.annotation.NonNull;
 
-import javax.inject.Inject;
 
 import io.github.hidroh.materialistic.BaseStoriesActivity;
 import io.github.hidroh.materialistic.data.ItemManager;

@@ -43,7 +43,8 @@ import dagger.ObjectGraph;
 import io.github.hidroh.materialistic.annotation.Synthetic;
 public abstract class DrawerActivity extends InjectableActivity {
 
-    @Inject AlertDialogBuilder mAlertDialogBuilder;
+
+    AlertDialogBuilder mAlertDialogBuilder = new AlertDialogBuilder.Impl();
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     @Synthetic View mDrawer;
@@ -166,34 +167,20 @@ public abstract class DrawerActivity extends InjectableActivity {
         findViewById(R.id.drawer_best).setOnClickListener(v -> navigate(BestActivity.class));
         findViewById(R.id.drawer_popular).setOnClickListener(v -> navigate(PopularActivity.class));
         findViewById(R.id.drawer_new).setOnClickListener(v -> navigate(NewActivity.class));
-        findViewById(R.id.drawer_show).setOnClickListener(v -> navigate(ShowActivity.class));
+        findViewById(R.id.drawer_show).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                ObjectGraph graph = getApplicationGraph();
+                intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.showhn.ShowActivity");
+                startActivity(intent);
+
+            }
+        });
         findViewById(R.id.drawer_ask).setOnClickListener(v -> navigate(AskActivity.class));
-        //findViewById(R.id.drawer_job).setOnClickListener(v -> navigate(JobsActivity.class));
         findViewById(R.id.drawer_job).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    Object obj = Class.forName("io.github.hidroh.materialistic.module.JobsActivity");
-                    System.out.println("find class!");
-                    ObjectGraph graph = getApplicationGraph();
-                    Field injectableTypes = graph.getClass().getDeclaredField("injectableTypes");
-                    injectableTypes.setAccessible(true);
-                    Map<String, Class<?>> injectMap = (Map<String, Class<?>>) injectableTypes.get(graph);
-//                    //(Map<String, Class<?>>) injectableTypes
-                    injectMap.put("io.github.hidroh.materialistic.module.JobsActivity", io.github.hidroh.materialistic.UiModule.class);
-                    injectMap.put("members/io.github.hidroh.materialistic.module.JobsActivity", io.github.hidroh.materialistic.UiModule.class);
-                    injectableTypes.set(graph,injectMap);
-
-                }
-                catch (ClassNotFoundException e){
-                    System.out.println("not found!");
-                }
-                catch (NoSuchFieldException e){
-                    System.out.println("No such field");
-                }
-                catch(IllegalAccessException e){
-                    System.out.println("Illegal");
-                }
                 Intent intent = new Intent();
                 ObjectGraph graph = getApplicationGraph();
                 intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.module.JobsActivity");

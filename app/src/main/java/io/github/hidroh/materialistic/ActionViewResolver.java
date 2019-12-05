@@ -22,7 +22,7 @@ import android.view.View;
 /**
  * Injectable utility to resolve action view for menu items
  */
-class ActionViewResolver {
+public class ActionViewResolver {
     /**
      * Returns the currently set action view for this menu item.
      *
