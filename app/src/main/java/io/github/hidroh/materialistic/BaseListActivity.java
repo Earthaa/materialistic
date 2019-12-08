@@ -47,6 +47,7 @@ import javax.inject.Inject;
 
 import io.github.hidroh.materialistic.annotation.Synthetic;
 import io.github.hidroh.materialistic.data.ItemManager;
+import io.github.hidroh.materialistic.data.LocalCache;
 import io.github.hidroh.materialistic.data.SessionManager;
 import io.github.hidroh.materialistic.data.WebItem;
 import io.github.hidroh.materialistic.widget.ItemPagerAdapter;
@@ -68,12 +69,15 @@ public abstract class BaseListActivity extends DrawerActivity implements MultiPa
     private Preferences.StoryViewMode mStoryViewMode;
     private boolean mExternalBrowser;
     private ViewPager mViewPager;
-     ActionViewResolver mActionViewResolver = new ActionViewResolver();
-     PopupMenu mPopupMenu = new PopupMenu.Impl();
-     @Inject SessionManager mSessionManager;
 
-     CustomTabsDelegate mCustomTabsDelegate = new CustomTabsDelegate();
-     KeyDelegate mKeyDelegate = new KeyDelegate();
+
+    protected ActionViewResolver mActionViewResolver = new ActionViewResolver();
+    protected PopupMenu mPopupMenu = new PopupMenu.Impl();
+    protected @Inject SessionManager mSessionManager;
+
+    protected CustomTabsDelegate mCustomTabsDelegate = new CustomTabsDelegate();
+    protected KeyDelegate mKeyDelegate = new KeyDelegate();
+
     private AppBarLayout mAppBar;
     private TabLayout mTabLayout;
     private FloatingActionButton mReplyButton;

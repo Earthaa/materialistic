@@ -175,27 +175,43 @@ public abstract class DrawerActivity extends InjectableActivity {
             }
         });
         findViewById(R.id.drawer_list).setOnClickListener(v -> navigate(ListActivity.class));
-        findViewById(R.id.drawer_best).setOnClickListener(v -> navigate(BestActivity.class));
+        findViewById(R.id.drawer_best).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                downloadDynamicModule("beststories");
+                Intent intent = new Intent();
+                intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.beststories.BestActivity");
+                startActivity(intent);
+
+            }
+        });
         findViewById(R.id.drawer_popular).setOnClickListener(v -> navigate(PopularActivity.class));
         findViewById(R.id.drawer_new).setOnClickListener(v -> navigate(NewActivity.class));
         findViewById(R.id.drawer_show).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                downloadDynamicModule("showhn");
                 Intent intent = new Intent();
-                ObjectGraph graph = getApplicationGraph();
                 intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.showhn.ShowActivity");
                 startActivity(intent);
 
             }
         });
-        findViewById(R.id.drawer_ask).setOnClickListener(v -> navigate(AskActivity.class));
+        findViewById(R.id.drawer_ask).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                downloadDynamicModule("askhn");
+                Intent intent = new Intent();
+                intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.askhn.AskActivity");
+                startActivity(intent);
+
+            }
+        });
         findViewById(R.id.drawer_job).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 downloadDynamicModule("jobboard");
                 Intent intent = new Intent();
-                ObjectGraph graph = getApplicationGraph();
                 intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.module.JobsActivity");
                 startActivity(intent);
 

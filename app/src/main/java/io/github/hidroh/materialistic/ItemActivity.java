@@ -83,12 +83,21 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
     private Preferences.StoryViewMode mStoryViewMode;
     @Inject @Named(ActivityModule.HN) ItemManager mItemManager;
     @Inject FavoriteManager mFavoriteManager;
-    @Inject AlertDialogBuilder mAlertDialogBuilder;
-    @Inject PopupMenu mPopupMenu;
+    AlertDialogBuilder mAlertDialogBuilder = new AlertDialogBuilder.Impl();
+//    @Inject PopupMenu mPopupMenu;
     @Inject UserServices mUserServices;
     @Inject SessionManager mSessionManager;
-    @Inject CustomTabsDelegate mCustomTabsDelegate;
-    @Inject KeyDelegate mKeyDelegate;
+//    @Inject CustomTabsDelegate mCustomTabsDelegate;
+//    @Inject KeyDelegate mKeyDelegate;
+
+//    protected ActionViewResolver mActionViewResolver = new ActionViewResolver();
+    protected PopupMenu mPopupMenu = new PopupMenu.Impl();
+//    protected @Inject SessionManager mSessionManager;
+
+    protected CustomTabsDelegate mCustomTabsDelegate = new CustomTabsDelegate();
+    protected KeyDelegate mKeyDelegate = new KeyDelegate();
+
+
     private TabLayout mTabLayout;
     @Synthetic AppBarLayout mAppBar;
     @Synthetic CoordinatorLayout mCoordinatorLayout;
@@ -131,6 +140,7 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        inject(this);
         mExternalBrowser = Preferences.externalBrowserEnabled(this);
         if (getIntent().getBooleanExtra(EXTRA_OPEN_COMMENTS, false)) {
             mStoryViewMode = Preferences.StoryViewMode.Comment;
