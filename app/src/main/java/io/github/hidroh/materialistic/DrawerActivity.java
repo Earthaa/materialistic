@@ -34,7 +34,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.android.play.core.splitinstall.SplitInstallManager;
+import com.google.android.play.core.splitinstall.SplitInstallManagerFactory;
+import com.google.android.play.core.splitinstall.SplitInstallRequest;
+import com.google.android.play.core.splitinstall.SplitInstallSessionState;
+import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener;
+import com.google.android.play.core.tasks.OnFailureListener;
+import com.google.android.play.core.tasks.OnSuccessListener;
+
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -43,7 +53,8 @@ import dagger.ObjectGraph;
 import io.github.hidroh.materialistic.annotation.Synthetic;
 public abstract class DrawerActivity extends InjectableActivity {
 
-
+    int mySessionId;
+    HashMap<String, Boolean> isLoaded = new HashMap<>();
     AlertDialogBuilder mAlertDialogBuilder = new AlertDialogBuilder.Impl();
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
@@ -170,6 +181,7 @@ public abstract class DrawerActivity extends InjectableActivity {
         findViewById(R.id.drawer_show).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent();
                 ObjectGraph graph = getApplicationGraph();
                 intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.showhn.ShowActivity");
@@ -181,6 +193,7 @@ public abstract class DrawerActivity extends InjectableActivity {
         findViewById(R.id.drawer_job).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                downloadDynamicModule("jobboard");
                 Intent intent = new Intent();
                 ObjectGraph graph = getApplicationGraph();
                 intent.setClassName("io.github.hidroh.materialistic", "io.github.hidroh.materialistic.module.JobsActivity");
@@ -197,6 +210,48 @@ public abstract class DrawerActivity extends InjectableActivity {
             navigate(UserActivity.class, extras);
         });
         findViewById(R.id.drawer_feedback).setOnClickListener(v -> navigate(FeedbackActivity.class));
+
+    }
+
+    private void downloadDynamicModule(String moduleName){
+        SplitInstallManager splitInstallManager =
+                SplitInstallManagerFactory.create(this);
+
+        SplitInstallRequest request =
+                SplitInstallRequest
+                        .newBuilder()
+                        .addModule(moduleName)
+                        .build();
+
+        if(isLoaded.containsKey(moduleName)){
+            System.out.println("Dynamic Module" + moduleName + " has already been downloaded");
+            return;
+        }
+        SplitInstallStateUpdatedListener listener = new SplitInstallStateUpdatedListener() {
+            @Override
+            public void onStateUpdate(SplitInstallSessionState splitInstallSessionState) {
+                if(splitInstallSessionState.sessionId() == mySessionId) {
+                    System.out.println("Dynamic Module " + moduleName + "Downloaded!");
+                }
+            }
+        };
+
+        splitInstallManager.registerListener(listener);
+
+        splitInstallManager.startInstall(request)
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        System.out.println("Failed to download");
+                    }
+                })
+                .addOnSuccessListener(new OnSuccessListener<Integer>() {
+                    @Override
+                    public void onSuccess(Integer sessionId) {
+                        mySessionId = sessionId;
+                        isLoaded.put(moduleName, true);
+                    }
+                });
 
     }
 
