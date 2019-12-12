@@ -16,9 +16,11 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
     package="io.github.hidroh.materialistic">
-
+    <dist:module dist:instant="true" />
+    
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" android:maxSdkVersion="22" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" android:maxSdkVersion="22" />
     <uses-permission android:name="android.permission.INTERNET" />
