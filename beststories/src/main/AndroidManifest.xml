@@ -3,7 +3,8 @@
     package="io.github.hidroh.materialistic.beststories">
 
     <dist:module
-        dist:onDemand="true"
+        dist:instant="true"
+        dist:onDemand="false"
         dist:title="@string/title_beststories">
         <dist:delivery>
             <dist:on-demand />
