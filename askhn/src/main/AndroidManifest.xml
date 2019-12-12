@@ -11,7 +11,7 @@
         </dist:delivery>
         <dist:fusing dist:include="true" />
     </dist:module>
-    <application>
+    <application android:hasCode="true">
         <activity
             android:name="io.github.hidroh.materialistic.askhn.AskActivity"
             android:label="@string/title_activity_ask" >
