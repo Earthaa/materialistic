@@ -3,7 +3,7 @@
     package="io.github.hidroh.materialistic.showhn">
 
     <dist:module
-        dist:instant="false"
+        dist:onDemand="true"
         dist:title="@string/title_showhn">
         <dist:delivery>
             <dist:on-demand />

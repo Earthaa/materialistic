@@ -3,7 +3,7 @@
     package="io.github.hidroh.materialistic.askhn">
 
     <dist:module
-        dist:instant="false"
+        dist:onDemand="true"
         dist:title="@string/title_askhn">
         <dist:delivery>
             <dist:on-demand />
