@@ -5,9 +5,7 @@
         dist:instant="true"
         dist:onDemand="false"
         dist:title="@string/title_jobboard">
-        <dist:delivery>
-            <dist:on-demand />
-        </dist:delivery>
+
         <dist:fusing dist:include="true" />
     </dist:module>
     <application android:hasCode="true">
