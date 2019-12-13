@@ -1,6 +1,6 @@
 Privacy Policy
 
-This Privacy Policy explains how personal data might be collected from users of Materialistic - Hacker News (https://play.google.com/store/apps/details?id=io.github.hidroh.materialistic) - from now on referred to as the app - how they are stored, processed and used by the app.
+This Privacy Policy explains how personal data might be collected from users of Materialistic - Hacker News (https://play.google.com/store/apps/details?id=hackernews) - from now on referred to as the app - how they are stored, processed and used by the app.
 
 1. Your provided data
 As a Hacker News (https://news.ycombinator.com) user, one may optionally provide login credentials to the app. Once provided, your login credentials will be used by the app for the sole purpose of connecting to Hacker News on your behalf, and only when your explicit interactions within the app require such credentials.

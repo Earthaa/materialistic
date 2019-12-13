@@ -17,7 +17,7 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="io.github.hidroh.materialistic">
+    package="io.github.hidroh.hackernews">
 
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" android:maxSdkVersion="22" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" android:maxSdkVersion="22" />
@@ -27,17 +27,17 @@
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <permission android:name="io.github.hidroh.materialistic.permission.SYNC_ITEM"
+    <permission android:name="io.github.hidroh.hackernews.permission.SYNC_ITEM"
         android:protectionLevel="signature" />
-    <permission android:name="io.github.hidroh.materialistic.permission.AUTHENTICATE_ACCOUNTS"
+    <permission android:name="io.github.hidroh.hackernews.permission.AUTHENTICATE_ACCOUNTS"
         android:protectionLevel="signature" />
-    <uses-permission android:name="io.github.hidroh.materialistic.permission.SYNC_ITEM" />
-    <uses-permission android:name="io.github.hidroh.materialistic.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="io.github.hidroh.hackernews.permission.SYNC_ITEM" />
+    <uses-permission android:name="io.github.hidroh.hackernews.permission.AUTHENTICATE_ACCOUNTS" />
 
     <uses-sdk tools:overrideLibrary="androidx.browser" />
 
     <application
-        android:name=".Application"
+        android:name="io.github.hidroh.hackernews.Application"
         android:supportsRtl="false"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup"
@@ -50,7 +50,7 @@
         android:hasCode="true"
         tools:replace="android:hasCode">
         <activity
-            android:name=".LauncherActivity"
+            android:name="io.github.hidroh.hackernews.LauncherActivity"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,11 +62,11 @@
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name=".ListActivity"
+            android:name="io.github.hidroh.hackernews.ListActivity"
             android:label="@string/title_activity_list">
         </activity>
         <activity
-            android:name=".ItemActivity"
+            android:name="io.github.hidroh.hackernews.ItemActivity"
             android:label="@string/title_activity_item">
             <intent-filter android:label="@string/filter_title_item" >
                 <action android:name="android.intent.action.VIEW" />
@@ -103,7 +103,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FavoriteActivity"
+            android:name="io.github.hidroh.hackernews.FavoriteActivity"
             android:label="@string/title_activity_favorite"
             android:launchMode="singleTop"> <!-- required to get search intents -->
             <meta-data android:name="android.app.searchable"
@@ -113,31 +113,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewActivity"
+            android:name="io.github.hidroh.hackernews.NewActivity"
             android:label="@string/title_activity_new" >
         </activity>
         <activity
-            android:name=".ShowActivity"
+            android:name="io.github.hidroh.hackernews.ShowActivity"
             android:label="@string/title_activity_show" >
         </activity>
         <activity
-            android:name=".AskActivity"
+            android:name="io.github.hidroh.hackernews.AskActivity"
             android:label="@string/title_activity_ask" >
         </activity>
         <activity
-            android:name=".JobsActivity"
+            android:name="io.github.hidroh.hackernews.JobsActivity"
             android:label="@string/title_activity_jobs" >
         </activity>
         <activity
-            android:name=".BestActivity"
+            android:name="io.github.hidroh.hackernews.BestActivity"
             android:label="@string/title_activity_best" >
         </activity>
         <activity
-            android:name=".PopularActivity"
+            android:name="io.github.hidroh.hackernews.PopularActivity"
             android:label="@string/title_activity_popular" >
         </activity>
         <activity
-            android:name=".SearchActivity"
+            android:name="io.github.hidroh.hackernews.SearchActivity"
             android:label="@string/title_activity_search" >
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable_stories" />
@@ -146,11 +146,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AboutActivity"
+            android:name="io.github.hidroh.hackernews.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="io.github.hidroh.hackernews.SettingsActivity"
             android:label="@string/action_settings"
             android:permission="android.permission.WRITE_SECURE_SETTINGS">
             <intent-filter>
@@ -159,26 +159,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PreferencesActivity"
+            android:name="io.github.hidroh.hackernews.PreferencesActivity"
             android:label="@string/action_settings" >
         </activity>
         <activity
-            android:name=".OfflineWebActivity" />
+            android:name="io.github.hidroh.hackernews.OfflineWebActivity" />
         <activity
-            android:name=".ReleaseNotesActivity"
+            android:name="io.github.hidroh.hackernews.ReleaseNotesActivity"
             android:label="@string/title_activity_release"
             android:theme="@style/AppAlertDialog" />
         <activity
-            android:name=".LoginActivity"
+            android:name="io.github.hidroh.hackernews.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppAlertDialog">
         </activity>
         <activity
-            android:name=".FeedbackActivity"
+            android:name="io.github.hidroh.hackernews.FeedbackActivity"
             android:theme="@style/AppAlertDialog">
         </activity>
         <activity
-            android:name=".SubmitActivity"
+            android:name="io.github.hidroh.hackernews.SubmitActivity"
             android:label="@string/title_activity_submit">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -187,11 +187,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ComposeActivity"
+            android:name="io.github.hidroh.hackernews.ComposeActivity"
             android:label="@string/title_activity_compose" >
         </activity>
         <activity
-            android:name=".UserActivity"
+            android:name="io.github.hidroh.hackernews.UserActivity"
             android:label="@string/title_activity_user"
             android:theme="@style/AppTheme.Translucent">
             <intent-filter android:label="@string/filter_title_item" >
@@ -229,19 +229,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ThreadPreviewActivity"
+            android:name="io.github.hidroh.hackernews.ThreadPreviewActivity"
             android:label="@string/title_activity_thread_preview"
             android:theme="@style/AppAlertDialog">
         </activity>
         <activity
-            android:name=".appwidget.WidgetConfigActivity"
+            android:name="io.github.hidroh.hackernews.appwidget.WidgetConfigActivity"
             android:theme="@style/AppAlertDialog">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
-        <service android:name=".accounts.AuthenticatorService"
-            android:permission="io.github.hidroh.materialistic.permission.AUTHENTICATE_ACCOUNTS">
+        <service android:name="io.github.hidroh.hackernews.accounts.AuthenticatorService"
+            android:permission="io.github.hidroh.hackernews.permission.AUTHENTICATE_ACCOUNTS">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
@@ -249,9 +249,9 @@
                 android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/authenticator" />
         </service>
-        <service android:name=".data.ItemSyncService"
+        <service android:name="io.github.hidroh.hackernews.data.ItemSyncService"
             android:process=":sync"
-            android:permission="io.github.hidroh.materialistic.permission.SYNC_ITEM">
+            android:permission="io.github.hidroh.hackernews.permission.SYNC_ITEM">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
@@ -259,29 +259,29 @@
                 android:resource="@xml/syncadapter" />
         </service>
         <service
-            android:name=".data.ItemSyncJobService"
+            android:name="io.github.hidroh.hackernews.data.ItemSyncJobService"
             android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="true" />
         <service
-            android:name=".appwidget.WidgetRefreshJobService"
+            android:name="io.github.hidroh.hackernews.appwidget.WidgetRefreshJobService"
             android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="true" />
         <service
-            android:name=".appwidget.WidgetService"
+            android:name="io.github.hidroh.hackernews.appwidget.WidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
         <service
-            android:name=".data.WebCacheService"
+            android:name="io.github.hidroh.hackernews.data.WebCacheService"
             android:exported="false" />
         <provider
-            android:authorities="io.github.hidroh.materialistic.syncprovider"
-            android:name=".data.SyncContentProvider"
+            android:authorities="io.github.hidroh.hackernews.syncprovider"
+            android:name="io.github.hidroh.hackernews.data.SyncContentProvider"
             android:exported="false" />
         <provider
-            android:authorities="io.github.hidroh.materialistic.recentprovider"
-            android:name=".data.SearchRecentSuggestionsProvider"
+            android:authorities="io.github.hidroh.hackernews.recentprovider"
+            android:name="io.github.hidroh.hackernews.data.SearchRecentSuggestionsProvider"
             android:exported="false" />
         <provider
-            android:authorities="io.github.hidroh.materialistic.fileprovider"
+            android:authorities="io.github.hidroh.hackernews.fileprovider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -289,17 +289,17 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-        <receiver android:name=".data.ItemSyncWifiReceiver">
+        <receiver android:name="io.github.hidroh.hackernews.data.ItemSyncWifiReceiver">
             <intent-filter>
                 <action
                     android:name="android.net.conn.CONNECTIVITY_CHANGE"
                     tools:ignore="BatteryLife"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".appwidget.WidgetProvider"
+        <receiver android:name="io.github.hidroh.hackernews.appwidget.WidgetProvider"
                   tools:ignore="ExportedReceiver">
             <intent-filter>
-                <action android:name="io.github.hidroh.materialistic.ACTION_REFRESH_WIDGET" />
+                <action android:name="io.github.hidroh.hackernews.ACTION_REFRESH_WIDGET" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

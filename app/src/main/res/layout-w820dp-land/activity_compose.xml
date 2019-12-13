@@ -92,7 +92,7 @@
             tools:ignore="RtlHardcoded"
             tools:targetApi="lollipop">
 
-            <io.github.hidroh.materialistic.widget.TintableTextView
+            <io.github.hidroh.hackernews.widget.TintableTextView
                 android:id="@+id/toggle"
                 style="@style/textTitleStyle"
                 android:enabled="false"

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="io.github.hidroh.materialistic.showhn">
+    package="io.github.hidroh.hackernews.showhn">
 
     <dist:module
         dist:onDemand="true"
@@ -10,7 +10,7 @@
     </dist:module>
     <application android:hasCode="true">
         <activity
-            android:name="io.github.hidroh.materialistic.showhn.ShowActivity"
+            android:name="io.github.hidroh.hackernews.showhn.ShowActivity"
             android:label="@string/title_activity_show" >
         </activity>
     </application>

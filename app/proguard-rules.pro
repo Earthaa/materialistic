@@ -17,5 +17,5 @@
 }
 
 -dontobfuscate
--keep class io.github.hidroh.materialistic.** { *; }
--keep interface io.github.hidroh.materialistic.** { *; }
+-keep class hackernews.** { *; }
+-keep interface hackernews.** { *; }

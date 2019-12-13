@@ -6,7 +6,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "io.github.hidroh.materialistic"
+        applicationId "io.github.hidroh.hackernews"
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 79

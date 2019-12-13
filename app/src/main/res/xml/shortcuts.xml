@@ -26,8 +26,8 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic"
-            android:targetClass="io.github.hidroh.materialistic.ListActivity" />
+            android:targetPackage="io.github.hidroh.hackernews"
+            android:targetClass="io.github.hidroh.hackernews.ListActivity" />
     </shortcut>
     <shortcut
         android:shortcutId="new"
@@ -37,8 +37,8 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic"
-            android:targetClass="io.github.hidroh.materialistic.NewActivity" />
+            android:targetPackage="io.github.hidroh.hackernews"
+            android:targetClass="io.github.hidroh.hackernews.NewActivity" />
     </shortcut>
     <shortcut
         android:shortcutId="favorite"
@@ -48,8 +48,8 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic"
-            android:targetClass="io.github.hidroh.materialistic.FavoriteActivity" />
+            android:targetPackage="io.github.hidroh.hackernews"
+            android:targetClass="io.github.hidroh.hackernews.FavoriteActivity" />
     </shortcut>
     <shortcut
         android:shortcutId="compose"
@@ -59,7 +59,7 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic"
-            android:targetClass="io.github.hidroh.materialistic.SubmitActivity" />
+            android:targetPackage="io.github.hidroh.hackernews"
+            android:targetClass="io.github.hidroh.hackernews.SubmitActivity" />
     </shortcut>
 </shortcuts>
