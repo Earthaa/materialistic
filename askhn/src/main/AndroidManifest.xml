@@ -3,10 +3,9 @@
     package="io.github.hidroh.materialistic.askhn">
 
     <dist:module
-        dist:instant="true"
-        dist:onDemand="false"
+        dist:onDemand="true"
         dist:title="@string/title_askhn">
-      
+
         <dist:fusing dist:include="true" />
     </dist:module>
     <application android:hasCode="true">
